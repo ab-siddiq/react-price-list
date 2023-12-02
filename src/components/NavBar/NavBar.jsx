@@ -38,7 +38,7 @@ const NavBar = () => {
         </span>
       </div>
       
-      <ul className={`bg-pink-900 sm:bg-inherit   ml-1 text-pink-100 py-2 rounded-lg sm:flex sm:justify-center sm:items-center sm:static duration-500 pl-6 absolute ${!open ? 'top-15' : '-top-40'} `}>
+      <ul className={`bg-pink-900 sm:bg-inherit   ml-1 text-pink-100 py-2 rounded-lg sm:flex sm:justify-center sm:items-center sm:static duration-700 pl-6 absolute ${!open ? 'top-15' : '-top-40'} `}>
         {
           routes.map(route=><Link key={route.id} route={route}></Link>)
         }

@@ -16,6 +16,7 @@ const PriceList = () => {
           <PriceCard key={price.id} price={price}></PriceCard>
         ))}
       </div>
+
     </div>
   );
 };
