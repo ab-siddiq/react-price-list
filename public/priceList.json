@@ -1,0 +1,73 @@
+ [
+    {
+      "id": 1,
+      "product": "Smartphone X",
+      "description": "High-end smartphone with advanced features and AI capabilities.",
+      "price": 799.99,
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "product": "Fashionable Watch",
+      "description": "Stylish and durable watch with fitness tracking and smart features.",
+      "price": 199.99,
+      "category": "Fashion"
+    },
+    {
+      "id": 3,
+      "product": "Wireless Earbuds",
+      "description": "Compact and portable earbuds for on-the-go music and calls.",
+      "price": 79.99,
+      "category": "Tech Accessories"
+    },
+    {
+      "id": 4,
+      "product": "Smart Home Hub",
+      "description": "Powerful hub for controlling smart devices and home automation.",
+      "price": 249.99,
+      "category": "Home Appliances"
+    },
+    {
+      "id": 5,
+      "product": "Professional Toolkit",
+      "description": "Versatile toolkit for DIY projects and home repairs.",
+      "price": 129.99,
+      "category": "Tools"
+    },
+    {
+      "id": 6,
+      "product": "Essential Cookware Set",
+      "description": "Affordable and reliable cookware set for everyday cooking needs.",
+      "price": 49.99,
+      "category": "Home Goods"
+    },
+    {
+      "id": 7,
+      "product": "Ultra HD Smart TV",
+      "description": "Premium smart TV with a sleek design and 4K resolution.",
+      "price": 999.99,
+      "category": "Electronics"
+    },
+    {
+      "id": 8,
+      "product": "Designer Handbag",
+      "description": "Modern and stylish handbag for fashion-forward individuals.",
+      "price": 149.99,
+      "category": "Fashion"
+    },
+    {
+      "id": 9,
+      "product": "Wireless Charging Pad",
+      "description": "Innovative charging pad with fast wireless charging technology.",
+      "price": 34.99,
+      "category": "Tech Accessories"
+    },
+    {
+      "id": 10,
+      "product": "Robotic Vacuum Cleaner",
+      "description": "Smart vacuum cleaner with AI navigation for efficient cleaning.",
+      "price": 349.99,
+      "category": "Home Appliances"
+    }
+  ]
+
