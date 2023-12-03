@@ -7,7 +7,8 @@ import NotFound from "./components/NotFound/NotFound";
 import PriceList from "./components/PriceList/PriceList";
 import Dealers from "./components/Dealers/Dealers";
 import BuyProduct from "./components/BuyProduct/BuyProduct";
-import PageLoading from "./components/PageLoading/PageLoading.jsx";
+import PageLoading from "./components/PageLoading/PageLoading";
+import Login from "./components/Login/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "/dealers",
         element: <Dealers></Dealers>,
         loader: () => fetch('https://jsonplaceholder.typicode.com/users')
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },

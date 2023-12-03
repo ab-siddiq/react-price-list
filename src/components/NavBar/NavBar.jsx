@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Link from "../MenuItem/MenuItem";
+import MenuItem from "../MenuItem/MenuItem";
+import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const NavBar = () => {
   const [open, setOpen] = useState(true);
@@ -46,16 +47,21 @@ const NavBar = () => {
           )}
         </span>
       </div>
-
-      <ul
+      <div
         className={`bg-pink-800 sm:bg-inherit box-border z-40 text-center ml-4 pt-5 sm:py-1 text-pink-100 h-60 sm:h-12 rounded-lg sm:flex  sm:justify-center sm:items-center sm:static duration-700  absolute ${
           !open ? "top-8" : "-top-96"
         } `}
       >
-        {routes.map((route) => (
-          <Link key={route.id} route={route}></Link>
-        ))}
-      </ul>
+        <ul className="sm:flex  sm:justify-center sm:items-center sm:static">
+          {routes.map((route) => (
+            <MenuItem key={route.id} route={route}></MenuItem>
+          ))}
+        </ul>
+        <div className="">
+          <Link to="/login">Login</Link>
+          {/* Login */}
+        </div>
+      </div>
     </nav>
   );
 };
