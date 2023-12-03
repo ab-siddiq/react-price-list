@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound/NotFound";
 import PriceList from "./components/PriceList/PriceList";
 import Dealers from "./components/Dealers/Dealers";
 import BuyProduct from "./components/BuyProduct/BuyProduct";
+import PageLoading from "./components/PageLoading/PageLoading.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <NotFound></NotFound>,
+        // element: <NotFound></NotFound>,
+        element: <PageLoading></PageLoading>,
       },
       {
         path: "/contact",

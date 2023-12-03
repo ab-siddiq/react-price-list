@@ -1,5 +1,5 @@
 import React from "react";
-
+import { UserIcon, EnvelopeIcon, MapPinIcon, PhotoIcon, GlobeAltIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
 const Dealer = ({ dealer }) => {
   const { name, email, phone, address, website, company } = dealer;
   return (
@@ -12,12 +12,25 @@ const Dealer = ({ dealer }) => {
         />
       </div>
       <div className="-mt-8 text-pink-900 text-sm">
-        <h2 className="">Name: {name}</h2>
-        <p className="">Email: {email}</p>
-        <p className="">Phone: {phone}</p>
-        <p className="">Address:{`${address.street}, ${address.city}`}</p>
-        <p className="">Website: {website}</p>
-        <p className="">Company: {company.name}</p>
+        <h2 className="flex items-center">
+          <UserIcon className="h-4 w-4 mr-1 text-pink-900" /> {name}
+        </h2>
+        <p  className="flex items-center">
+          <EnvelopeIcon className="h-4 w-4 mr-1 text-pink-900" /> {email}
+        </p>
+        <p  className="flex items-center">
+          <PhotoIcon className="h-4 w-4 mr-1 text-pink-900" /> {phone}
+        </p>
+        <p  className="flex items-center">
+          <MapPinIcon className="h-4 w-4 mr-1 text-pink-900" />{" "}
+          {`${address.street}, ${address.city}`}
+        </p>
+        <p  className="flex items-center">
+          <GlobeAltIcon className="h-4 w-4 mr-1 text-pink-900" /> {website}
+        </p>
+        <p  className="flex items-center">
+          <BriefcaseIcon className="h-4 w-4 mr-1 text-pink-900" /> {company.name}
+        </p>
       </div>
     </div>
   );
