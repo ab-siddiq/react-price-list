@@ -6,7 +6,7 @@ const Dealers = () => {
   const dealers = useLoaderData();
   return (
     <div className="p-4 ">
-      <h2 className="bg-pink-600 text-center mb-4 sm:my-4 py-5 text-3xl font-bold text-pink-100 rounded-lg">
+      <h2 className="bg-pink-900 text-center mb-4 sm:my-4 py-5 text-3xl font-bold text-pink-100 rounded-lg">
         Our Dealer List
       </h2>
       <div className="grid sm:grid-cols-4 gap-5 mt-10">

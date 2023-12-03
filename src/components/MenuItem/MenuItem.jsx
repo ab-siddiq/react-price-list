@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ActiveLink from "../ActiveLink/ActiveLink";
 const MenuItem = ({ route }) => {
   return (
-    <li className="mr-10">
-      <Link to={route.path}>{route.name}</Link>
+    <li className="px-3 py-2 ">
+      <ActiveLink to={route.path}>{route.name}</ActiveLink>
     </li>
   );
 };
