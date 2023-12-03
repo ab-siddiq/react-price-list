@@ -9,7 +9,7 @@ const PriceList = () => {
   }, []);
 
   return (
-    <div className="p-2">
+    <div className="p-2 bg-pink-200">
       <h2 className="bg-pink-600 text-center mb-4 sm:my-4 py-5 text-3xl font-bold text-pink-100 rounded-lg">
         Our Price List
       </h2>
