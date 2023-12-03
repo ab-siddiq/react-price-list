@@ -11,7 +11,9 @@ const PriceCard = ({ price }) => {
           {price.category}
         </p>
       </div>
-      <button className="bg-pink-900  w-full rounded-lg mt-3 py-1 font-bold transform hover:scale-105 duration-700">Buy Now</button>
+      <button className="bg-pink-900  w-full rounded-lg mt-3 py-1 font-bold transform hover:scale-105 duration-700">
+        Buy Now
+      </button>
     </div>
   );
 };

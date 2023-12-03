@@ -4,31 +4,13 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "postcss";
-import ErrorElement from "./components/ErrorElement/ErrorElement";
+import NotFound from "./components/NotFound/NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
-  },
-  {
-    path: "/about",
-    element: <Root/>,
-    errorElement: <ErrorElement></ErrorElement>,
-  },
-  {
-    path: "/contact",
-    element: <Root/>,
-    errorElement: <ErrorElement></ErrorElement>,
-  },
-  {
-    path: "/services",
-    element: <Root/>,
-    errorElement: <ErrorElement></ErrorElement>,
-  },
-  {
-    path: "/products",
-    element: <Root/>,
-    errorElement: <ErrorElement></ErrorElement>,
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
