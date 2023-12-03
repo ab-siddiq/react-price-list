@@ -29,6 +29,11 @@ const NavBar = () => {
       name: "Products",
       path: "/products",
     },
+    {
+      id: 6,
+      name: "Dealers",
+      path: "/dealers",
+    },
   ];
   return (
     <nav className="sm:bg-pink-900  py-2 text-sky-100 font-bold">

@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "postcss";
 import NotFound from "./components/NotFound/NotFound";
 import PriceList from "./components/PriceList/PriceList.jsx";
+import Dealers from "./components/Dealers/Dealers.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <NotFound></NotFound>,
+      },
+      {
+        path: "/dealers",
+        element: <Dealers></Dealers>,
+        loader: () => fetch('https://jsonplaceholder.typicode.com/users')
       },
     ],
   },
