@@ -5,12 +5,34 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "postcss";
 import NotFound from "./components/NotFound/NotFound";
+import PriceList from "./components/PriceList/PriceList.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <NotFound />,
-    children: [],
+    children: [
+      {
+        path: "/",
+        element: <PriceList></PriceList>,
+      },
+      {
+        path: "/about",
+        element: <NotFound></NotFound>,
+      },
+      {
+        path: "/contact",
+        element: <NotFound></NotFound>,
+      },
+      {
+        path: "/services",
+        element: <NotFound></NotFound>,
+      },
+      {
+        path: "/products",
+        element: <NotFound></NotFound>,
+      },
+    ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

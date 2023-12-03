@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "./NavBar/NavBar";
 import Footer from "./Footer/Footer";
-import PriceList from "./PriceList/PriceList";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <PriceList></PriceList>
+      <Outlet></Outlet>
       <Footer></Footer>
     </div>
   );
