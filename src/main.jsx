@@ -39,7 +39,23 @@ const router = createBrowserRouter([
       {
         path: "/purchase/:productID",
         element: <BuyProduct></BuyProduct>,
-        loader: ({params}) => fetch(`priceList.json`)
+        loader: async ({ params }) => {
+          try {
+            const response = await fetch(`priceList.json`);
+            if (!response.ok) {
+              throw new Error('Network response was not ok.');
+            }
+            const data = await response.json();
+            
+            const filteredItem = data.filter(items =>items.id===Number(params.productID))
+              console.log(filteredItem)
+           return filteredItem
+            
+          } catch (error) {
+            console.error('Error fetching data:', error);
+            return null; // Return null or handle the error as needed
+          }
+        }
       },
       {
         path: "/dealers",

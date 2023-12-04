@@ -8,7 +8,7 @@ import {
   BriefcaseIcon,
 } from "@heroicons/react/24/solid";
 const Dealer = ({ dealer }) => {
-  const { name, email, phone, address, website, company } = dealer;
+  const { name, email, phone, address: {street, city}, website, company: {name: companyName} } = dealer;
   return (
     <div className="bg-pink-200 rounded-lg px-5 py-4 mt-3 border-pink-900 border-2">
       <div className="  flex justify-center items-center">
@@ -30,14 +30,14 @@ const Dealer = ({ dealer }) => {
         </p>
         <p className="flex items-center">
           <MapPinIcon className="h-4 w-4 mr-1 text-pink-900" />{" "}
-          {`${address.street}, ${address.city}`}
+          {`${street}, ${city}`}
         </p>
         <p className="flex items-center">
           <GlobeAltIcon className="h-4 w-4 mr-1 text-pink-900" /> {website}
         </p>
         <p className="flex items-center">
           <BriefcaseIcon className="h-4 w-4 mr-1 text-pink-900" />{" "}
-          {company.name}
+          {companyName}
         </p>
       </div>
     </div>

@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../firebase/firebase.init";
+import Login from "../Login/Login";
 const NavBar = () => {
   const [open, setOpen] = useState(true);
-  const auth = getAuth(app)
-  console.log(auth?.currentUser?.displayName)
-  const [user] = useState(null)
-  const handleSignOut = () =>{
-    signOut(auth)
-  }
+  const auth = getAuth(app);
+  console.log(auth?.currentUser?.displayName);
+  const [user] = useState(null);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   const routes = [
     {
       id: 1,
@@ -66,12 +67,18 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="pl-6">
-          {
-            auth ? auth?.currentUser?.displayName : <Link to="/login">Login</Link>
-          }
-          {
-            auth ? <Link to="/login">Logout</Link> : <Link onClick={handleSignOut} to="/login">Login</Link>
-          }
+          {auth ? (
+            auth?.currentUser?.displayName
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+          {auth ? (
+            <Link to="/login">Logout</Link>
+          ) : (
+            <Link onClick={handleSignOut} to="/login">
+              Login
+            </Link>
+          )}
           {/* Login */}
         </div>
       </div>

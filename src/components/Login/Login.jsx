@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
-const Login = () => {
+const Login = (props) => {
   const [user, setUser] = useState(null)
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
@@ -16,6 +16,7 @@ const Login = () => {
       console.log('error: ',error.message)
     })
   } 
+  
   return (
     <div className="h-screen m-5">
       <div className="flex justify-end">
