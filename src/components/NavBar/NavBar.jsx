@@ -8,7 +8,7 @@ import Login from "../Login/Login";
 const NavBar = () => {
   const [open, setOpen] = useState(true);
   const auth = getAuth(app);
-  console.log(auth?.currentUser?.displayName);
+  // console.log(auth?.currentUser?.displayName);
   const [user] = useState(null);
   const handleSignOut = () => {
     signOut(auth);
@@ -67,7 +67,7 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="pl-6">
-          {auth ? (
+          {/* {auth ? (
             auth?.currentUser?.displayName
           ) : (
             <Link to="/login">Login</Link>
@@ -78,8 +78,8 @@ const NavBar = () => {
             <Link onClick={handleSignOut} to="/login">
               Login
             </Link>
-          )}
-          {/* Login */}
+          )} */}
+          <Link to="/login">Login</Link>
         </div>
       </div>
     </nav>

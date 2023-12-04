@@ -43,24 +43,25 @@ const router = createBrowserRouter([
           try {
             const response = await fetch(`priceList.json`);
             if (!response.ok) {
-              throw new Error('Network response was not ok.');
+              throw new Error("Network response was not ok.");
             }
             const data = await response.json();
-            
-            const filteredItem = data.filter(items =>items.id===Number(params.productID))
-              console.log(filteredItem)
-           return filteredItem
-            
+
+            const filteredItem = data?.filter(
+              (items) => items.id === Number(params.productID)
+            );
+            // console.log(filteredItem.legth)
+            return filteredItem;
           } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error("Error fetching data:", error);
             return null; // Return null or handle the error as needed
           }
-        }
+        },
       },
       {
         path: "/dealers",
         element: <Dealers></Dealers>,
-        loader: () => fetch('https://jsonplaceholder.typicode.com/users')
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
       },
       {
         path: "/login",
