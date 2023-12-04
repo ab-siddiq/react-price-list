@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <div>
       <NavBar></NavBar>
+     
       <div>{navigation.state === 'loading' && <PageLoading></PageLoading>}</div>
       <Outlet></Outlet>
       <Footer></Footer>
