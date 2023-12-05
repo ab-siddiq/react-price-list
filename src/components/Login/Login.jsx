@@ -5,11 +5,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = (props) => {
   const navigate = useNavigate();
-  const location = useLocation()
-  const { user,signIn, signInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const { user, signIn, signInWithGoogle } = useContext(AuthContext);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const from = location.state?.from.pathname || "/";
+  const [show,setShow] = useState(false)
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -61,17 +62,29 @@ const Login = (props) => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={show ? "text": "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
-              <label className="label">
+              <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center gap-1 ">
+                  <input
+                  onClick={()=>setShow(!show)}
+                    type="checkbox"
+                    id="show_password"
+                    name="showPassword"
+                    value="showPassword"
+                  />
+                  <label className="label-text-alt" htmlFor="show_password">
+                    Show password
+                  </label>
+                </div>
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
-              </label>
+              </div>
             </div>
             <div className="form-control  gap-5 ">
               <button className="btn hover:bg-pink-300 hover:text-pink-900 bg-pink-900 text-pink-100">
