@@ -1,3 +1,3 @@
 # Product Price List
 
-# [Live](https://react-product-price-list.netlify.app/) 
+# [Live](https://react-price-list-bc23e.web.app/) 
