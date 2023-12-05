@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../firebase/firebase.init";
-import Login from "../Login/Login";
+import { AuthContext } from "../../providers/AuthProviders";
 const NavBar = () => {
   const [open, setOpen] = useState(true);
   const auth = getAuth(app);
+  const {logOut,user} = useContext(AuthContext)
   // console.log(auth?.currentUser?.displayName);
-  const [user] = useState(null);
-  const handleSignOut = () => {
-    signOut(auth);
+ 
+  const handleLogOut = () => {
+    logOut()
+    .then(()=>{})
+    .catch(error=>console.log(error))
+    ;
   };
   const routes = [
     {
@@ -67,19 +71,10 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="pl-6">
-          {/* {auth ? (
-            auth?.currentUser?.displayName
-          ) : (
-            <Link to="/login">Login</Link>
-          )}
-          {auth ? (
-            <Link to="/login">Logout</Link>
-          ) : (
-            <Link onClick={handleSignOut} to="/login">
-              Login
-            </Link>
-          )} */}
-          <Link to="/login">Login</Link>
+          {
+            user ? <div><div className="">{user.email}</div><div className=""><Link onClick={handleLogOut} to="/login">Logout</Link></div></div>: <Link to="/login">Login</Link>
+          }
+          
         </div>
       </div>
     </nav>
