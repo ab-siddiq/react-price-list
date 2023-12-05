@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             // console.log(filteredItem.legth)
             return filteredItem;
           } catch (error) {
-            console.error("Error fetching data:", error);
+            // console.error("Error fetching data:", error);
             return null; // Return null or handle the error as needed
           }
         },
