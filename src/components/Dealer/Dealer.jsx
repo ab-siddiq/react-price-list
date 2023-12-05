@@ -10,7 +10,7 @@ import {
 const Dealer = ({ dealer }) => {
   const { name, email, phone, address: {street, city}, website, company: {name: companyName} } = dealer;
   return (
-    <div className="bg-pink-200 rounded-lg px-5 py-4 mt-3 border-pink-900 border-2">
+    <div className="bg-pink-200 rounded-lg px-5 py-4 mt-6 border-pink-900 border-2 shadow-lg shadow-pink-600">
       <div className="  flex justify-center items-center">
         <img
           className="h-20 w-20 rounded-full bg-pink-300 block relative -top-10 ring-4 ring-pink-200"

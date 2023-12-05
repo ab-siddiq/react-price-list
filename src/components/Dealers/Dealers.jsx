@@ -5,7 +5,7 @@ import Dealer from "../Dealer/Dealer";
 const Dealers = () => {
   const dealers = useLoaderData();
   return (
-    <div className="p-4 ">
+    <div className="p-6 mb-10">
       <h2 className="bg-pink-900 text-center mb-4 h-20 sm:h-32 md:48 flex justify-center items-center sm:my-4 py-5 text-3xl font-bold text-pink-100 rounded-lg">
         Our Dealer List
       </h2>

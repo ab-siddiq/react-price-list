@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const productCard = ({ product }) => {
   return (
-    <div className="bg-pink-200 rounded-lg p-4 text-pink-900 border-pink-900 border-2">
+    <div className="bg-pink-200 rounded-lg p-4 mt-5 text-pink-900 border-pink-900 border-2 shadow-lg shadow-pink-600">
       <h2 className="text-xl font-bold">{product.product}</h2>
       <p className="text-sm py-2">{product.description}</p>
       <div className="flex justify-between items-center">
