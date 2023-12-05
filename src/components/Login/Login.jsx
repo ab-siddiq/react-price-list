@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = (props) => {
-  const [user, setUser] = useState(null);
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { user,signIn, signInWithGoogle } = useContext(AuthContext);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
-
+  const from = location.state?.from.pathname || "/";
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,16 +22,20 @@ const Login = (props) => {
       .catch((error) => {
         console.log(error);
       });
+    form.reset();
+    navigate(from);
     console.log(email, password);
   };
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((res) => {
+        navigate(from);
         console.log(res.user);
       })
       .catch((error) => {
         console.log("error: ", error.message);
       });
+    if(user) navigate(from);
   };
 
   return (
@@ -76,13 +80,12 @@ const Login = (props) => {
             </div>
           </form>
           <div className="card-body -mt-14">
-
-          <button
-            onClick={handleGoogleSignIn}
-            className="btn hover:bg-pink-900 hover:text-pink-300 bg-black-50 border-pink-900  text-pink-100"
-          >
-            Login With Google
-          </button>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn hover:bg-pink-900 hover:text-pink-300 bg-black-50 border-pink-900  text-pink-100"
+            >
+              Login With Google
+            </button>
             <label className="flex items-center gap-1 text-sm">
               <span className="text-pink-50">New to PriceList?</span>
               <Link to="/register" className=" font-bold text-pink-500">
