@@ -72,7 +72,7 @@ const NavBar = () => {
         </ul>
         <div className="pl-6">
           {
-            user ? <div><div className="">{user.email}</div><div className=""><Link onClick={handleLogOut} to="/login">Logout</Link></div></div>: <Link to="/login">Login</Link>
+            user ? <div className="text-sm"><div className="">{user.email}</div><div className=""><Link onClick={handleLogOut} to="/login">Logout</Link></div></div>: <Link to="/login">Login</Link>
           }
           
         </div>

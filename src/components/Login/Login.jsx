@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = (props) => {
   const [user, setUser] = useState(null);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
@@ -25,11 +25,9 @@ const Login = (props) => {
     console.log(email, password);
   };
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider)
+    signInWithGoogle()
       .then((res) => {
-        const loggedInUser = res.user;
-        console.log(loggedInUser);
-        setUser(loggedInUser);
+        console.log(res.user);
       })
       .catch((error) => {
         console.log("error: ", error.message);
@@ -75,13 +73,16 @@ const Login = (props) => {
               <button className="btn hover:bg-pink-300 hover:text-pink-900 bg-pink-900 text-pink-100">
                 Login
               </button>
-              <button
-                onClick={handleGoogleSignIn}
-                className="btn hover:bg-pink-300 hover:text-pink-900 bg-pink-900 text-pink-100"
-              >
-                Login With Google
-              </button>
             </div>
+          </form>
+          <div className="card-body -mt-14">
+
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn hover:bg-pink-900 hover:text-pink-300 bg-black-50 border-pink-900  text-pink-100"
+          >
+            Login With Google
+          </button>
             <label className="flex items-center gap-1 text-sm">
               <span className="text-pink-50">New to PriceList?</span>
               <Link to="/register" className=" font-bold text-pink-500">
@@ -89,7 +90,7 @@ const Login = (props) => {
                 Register here!
               </Link>
             </label>
-          </form>
+          </div>
         </div>
       </div>
     </div>
