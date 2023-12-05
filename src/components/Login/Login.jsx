@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = (props) => {
   const navigate = useNavigate();
+  const location = useLocation()
   const { user,signIn, signInWithGoogle } = useContext(AuthContext);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
@@ -35,7 +36,6 @@ const Login = (props) => {
       .catch((error) => {
         console.log("error: ", error.message);
       });
-    if(user) navigate(from);
   };
 
   return (

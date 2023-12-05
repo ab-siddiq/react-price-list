@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import AuthProviders from "./providers/AuthProviders";
 import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         path: "/dealers",
         element: <PrivateRoutes><Dealers></Dealers></PrivateRoutes>,
         loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+      },
+      {
+        path: "/placeOrder",
+        element: <PrivateRoutes><PlaceOrder></PlaceOrder></PrivateRoutes>
       },
       {
         path: "/login",

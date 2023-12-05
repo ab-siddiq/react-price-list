@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { redirect, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Link,
+  Navigate,
+  useLoaderData,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 
 const BuyProduct = () => {
   const [quantity, setQuantity] = useState(1);
   // const [currentPrice, setCurrentPrice] = useState(0);
-  const getProduct= useLoaderData();
-  console.log(getProduct)
-  getProduct==null && redirect('/') 
-  const [{ product, price, description, category }] = getProduct
+  const getProduct = useLoaderData();
+  getProduct == null && redirect("/");
+  const [{ product, price, description, category }] = getProduct;
   const [productPrice, setProductPrice] = useState(quantity * price);
 
   const priceCalculation = () => {
@@ -22,6 +27,10 @@ const BuyProduct = () => {
   const deccreaseQuantity = () => {
     setQuantity(quantity - 1);
     priceCalculation();
+  };
+  const placeOrder = () => {
+    return <Link to='/placeOrder'></Link>
+    console.log("li");
   };
 
   return (
@@ -66,9 +75,14 @@ const BuyProduct = () => {
         </div>
         <p className="">Sub Total: ${productPrice}</p>
       </div>
-      <button className="bg-pink-900 text-pink-100 px-2 py-1 rounded-lg mt-2 w-full">
+      <Link to='/placeOrder'>
+      <button
+        onClick={placeOrder}
+        className="bg-pink-900 text-pink-100 px-2 py-1 rounded-lg mt-2 w-full"
+      >
         Place Order
       </button>
+      </Link>
     </div>
   );
 };

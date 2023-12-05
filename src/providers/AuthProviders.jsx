@@ -19,12 +19,14 @@ const AuthProviders = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const signInWithGoogle = ()=>{
+  const signInWithGoogle = () => {
+    setLoading(true);
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth,provider)
-  }
+    return signInWithPopup(auth, provider);
+  };
   const logOut = () => {
     return signOut(auth);
   };
