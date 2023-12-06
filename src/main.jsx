@@ -13,6 +13,10 @@ import Register from "./components/Register/Register";
 import AuthProviders from "./providers/AuthProviders";
 import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
+import AddProduct from "./components/AddProduct/AddProduct.jsx";
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import Users from "./components/Users/Users.jsx";
+import Products from "./components/Products/Products.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +42,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <NotFound></NotFound>,
+        element: <Products></Products>,
+        loader: ()=>fetch('http://localhost:5000/products')
       },
       {
         path: "/purchase/:productID",
@@ -78,6 +83,19 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addProduct",
+        element: <AddProduct></AddProduct>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+      },
+     
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
       },
     ],
   },

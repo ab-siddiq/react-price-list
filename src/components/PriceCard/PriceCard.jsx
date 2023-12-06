@@ -13,7 +13,7 @@ const productCard = ({ product }) => {
         </p>
       </div>
       <Link to={`/purchase/${product.id}`}>
-        <button className="bg-pink-900 text-purple-100  w-full rounded-lg mt-3 py-1 font-bold transform hover:scale-105 duration-700">
+        <button className="bg-pink-900 text-pink-100 hover:border-2   w-full rounded-lg mt-3 py-1 font-bold transform hover:scale-x-105 duration-1000 ">
           Buy Now
         </button>
       </Link>

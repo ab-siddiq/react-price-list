@@ -10,7 +10,7 @@ const Login = (props) => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const from = location.state?.from.pathname || "/";
-  const [show,setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,7 +19,7 @@ const Login = (props) => {
     signIn(email, password)
       .then((res) => {
         console.log(res);
-        form.reset();
+        
       })
       .catch((error) => {
         console.log(error);
@@ -62,7 +62,7 @@ const Login = (props) => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type={show ? "text": "password"}
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
@@ -71,7 +71,7 @@ const Login = (props) => {
               <div className="flex items-center justify-between mt-2">
                 <div className="flex items-center gap-1 ">
                   <input
-                  onClick={()=>setShow(!show)}
+                    onClick={() => setShow(!show)}
                     type="checkbox"
                     id="show_password"
                     name="showPassword"
@@ -86,16 +86,20 @@ const Login = (props) => {
                 </a>
               </div>
             </div>
+
             <div className="form-control  gap-5 ">
               <button className="btn hover:bg-pink-300 hover:text-pink-900 bg-pink-900 text-pink-100">
                 Login
               </button>
             </div>
           </form>
-          <div className="card-body -mt-14">
+          <div className="card-body -mt-16">
+            <div className="flex flex-col w-full border-opacity-50 ">
+              <div className="divider ">OR</div>
+            </div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn hover:bg-pink-900 hover:text-pink-300 bg-black-50 border-pink-900  text-pink-100"
+              className="btn hover:bg-pink-900 hover:text-pink-300 bg-black-50 border-pink-900  text-pink-100 -mt-2"
             >
               Login With Google
             </button>

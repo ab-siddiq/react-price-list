@@ -8,14 +8,13 @@ import { AuthContext } from "../../providers/AuthProviders";
 const NavBar = () => {
   const [open, setOpen] = useState(true);
   const auth = getAuth(app);
-  const {logOut,user} = useContext(AuthContext)
+  const { logOut, user } = useContext(AuthContext);
   // console.log(auth?.currentUser?.displayName);
- 
+
   const handleLogOut = () => {
     logOut()
-    .then(()=>{})
-    .catch(error=>console.log(error))
-    ;
+      .then(() => {})
+      .catch((error) => console.log(error));
   };
   const routes = [
     {
@@ -71,10 +70,18 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="pl-6">
-          {
-            user ? <div className="text-sm"><div className="">{user.email}</div><div className=""><Link onClick={handleLogOut} to="/login">Logout</Link></div></div>: <Link to="/login">Login</Link>
-          }
-          
+          {user ? (
+            <div className="text-sm">
+              <Link to='/dashboard'><div className="">{user.email}</div></Link>
+              <div className="">
+                <Link onClick={handleLogOut} to="/login">
+                  Logout
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </div>
       </div>
     </nav>
