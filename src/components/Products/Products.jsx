@@ -18,13 +18,16 @@ const Products = () => {
       }
     })
   }
+  const handleEdit = id =>{
+    console.log(id)
+  }
   return (
     <div className="px-6 py-10 w-2/3 mx-auto h-screen">
       <div>
         <div className="overflow-x-auto">
           <table className="table bg-pink-900 text-pink-100">
             {/* head */}
-            <thead className="text-pink-100">
+          {products.length>0 ? <thead className="text-pink-100">
               <tr>
                 <th>SL</th>
                 <th>ID</th>
@@ -34,7 +37,7 @@ const Products = () => {
                 <th>Price</th>
                 <th>Actions</th>
               </tr>
-            </thead>
+            </thead>:<p className="text-center py-2 font-bold text-2xl">No Data Exists!!!</p>}
             <tbody>
               {products.map((product, keys) => (
                 <tr>
@@ -45,7 +48,8 @@ const Products = () => {
                   <td>{product.productCategory}</td>
                   <td>{product.productPrice}</td>
                   <td className="flex justify-start gap-2">
-                    <button onClick={()=>handleDelete(product._id)}><PencilIcon className="h-5 w-5  text-green-600 " /></button>
+                    <button onClick={()=>handleEdit(product._id)}><PencilIcon className="h-5 w-5  text-green-600 " /></button>
+                    <div className="border-r-2 border-pink-100"></div>
                     <button onClick={()=>handleDelete(product._id)}><TrashIcon className="h-5 w-5 text-red-600" /></button>
                   </td>
                 </tr>

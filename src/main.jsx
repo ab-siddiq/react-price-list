@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
-        loader: ()=>fetch('http://localhost:5000/products')
+        loader: ()=>fetch('https://react-price-list-server.vercel.app/products')
       },
       {
         path: "/purchase/:productID",
