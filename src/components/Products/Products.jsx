@@ -6,7 +6,7 @@ const Products = () => {
   const products = useLoaderData();
   const handleDelete= id =>{
     console.log(id)
-    fetch(`http://localhost:5000/products/${id}`,{
+    fetch(`https://react-price-list-server.vercel.app/${id}`,{
       method: 'DELETE',
 
     })

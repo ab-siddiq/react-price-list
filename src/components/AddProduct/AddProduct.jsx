@@ -29,7 +29,7 @@ const AddProduct = () => {
     //       alert("added");
     //     }
     //   });
-    fetch('http://localhost:5000/addProduct', {
+    fetch('https://react-price-list-server.vercel.app/addProduct', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
