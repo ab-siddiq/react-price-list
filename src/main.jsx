@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import NotFound from "./components/NotFound/NotFound";
-import PriceList from "./components/PriceList/PriceList";
-import Dealers from "./components/Dealers/Dealers";
-import BuyProduct from "./components/BuyProduct/BuyProduct";
-import PageLoading from "./components/PageLoading/PageLoading";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import AuthProviders from "./providers/AuthProviders";
-import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
-import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
+import App from "./App.jsx";
 import AddProduct from "./components/AddProduct/AddProduct.jsx";
+import BuyProduct from "./components/BuyProduct/BuyProduct";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
-import Users from "./components/Users/Users.jsx";
+import Dealers from "./components/Dealers/Dealers";
+import Login from "./components/Login/Login";
+import NotFound from "./components/NotFound/NotFound";
+import PageLoading from "./components/PageLoading/PageLoading";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder.jsx";
+import PriceList from "./components/PriceList/PriceList";
 import Products from "./components/Products/Products.jsx";
+import Register from "./components/Register/Register";
+import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
+import Users from "./components/Users/Users.jsx";
+import "./index.css";
+import AuthProviders from "./providers/AuthProviders";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
-        loader: ()=>fetch('https://react-price-list-server.vercel.app/products')
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/purchase/:productID",
@@ -69,12 +69,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/dealers",
-        element: <PrivateRoutes><Dealers></Dealers></PrivateRoutes>,
-        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        element: (
+          <PrivateRoutes>
+            <Dealers></Dealers>
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("http://localhost:5000/users"),
       },
       {
         path: "/placeOrder",
-        element: <PrivateRoutes><PlaceOrder></PlaceOrder></PrivateRoutes>
+        element: (
+          <PrivateRoutes>
+            <PlaceOrder></PlaceOrder>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
@@ -92,7 +100,7 @@ const router = createBrowserRouter([
         path: "/users",
         element: <Users></Users>,
       },
-     
+
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
@@ -103,7 +111,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProviders>
-    <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </AuthProviders>
   </React.StrictMode>
 );

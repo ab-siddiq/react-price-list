@@ -29,21 +29,21 @@ const AddProduct = () => {
     //       alert("added");
     //     }
     //   });
-    fetch('https://react-price-list-server.vercel.app/addProduct', {
-      method: 'POST',
+    fetch("http://localhost:5000/addProduct", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(productInfo)
+      body: JSON.stringify(productInfo),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert('Users added successfully');
+          alert("Users added successfully");
           form.reset();
         }
-      })
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-200">
