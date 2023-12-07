@@ -74,7 +74,7 @@ const router = createBrowserRouter([
             <Dealers></Dealers>
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
       },
       {
         path: "/placeOrder",
