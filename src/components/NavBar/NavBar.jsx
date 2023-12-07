@@ -49,7 +49,7 @@ const NavBar = () => {
     },
   ];
   return (
-    <nav className="md:bg-pink-900   text-sky-100 font-bold z-10 sticky top-0">
+    <nav className="md:bg-pink-900   text-sky-100 font-bold z-10 sticky top-0 shadow-lg shadow-pink-600">
       <div className="md:hidden ml-4 mt-2" onClick={() => setOpen(!open)}>
         <span>
           {!open === false ? (
