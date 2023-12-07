@@ -49,7 +49,7 @@ const NavBar = () => {
     },
   ];
   return (
-    <nav className="md:bg-pink-900   text-sky-100 font-bold">
+    <nav className="md:bg-pink-900   text-sky-100 font-bold z-10 sticky top-0">
       <div className="md:hidden ml-4 mt-2" onClick={() => setOpen(!open)}>
         <span>
           {!open === false ? (
@@ -60,7 +60,7 @@ const NavBar = () => {
         </span>
       </div>
       <div
-        className={`bg-pink-800 md:bg-inherit box-border z-40  ml-4 pt-5 md:py-1 text-pink-100 h-64 md:h-12 rounded-lg md:flex  md:justify-center md:items-center md:static duration-700  absolute ${
+        className={`bg-pink-800 md:bg-inherit box-border z-10  ml-4 pt-5 md:py-1 text-pink-100 h-64 md:h-12 rounded-lg md:flex  md:justify-center md:items-center md:static duration-700  absolute ${
           !open ? "top-8" : "-top-96"
         } `}
       >

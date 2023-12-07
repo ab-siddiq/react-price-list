@@ -51,12 +51,12 @@ const AddProduct = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content w-2/3 flex-col lg:flex-row-reverse">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleAddProduct} className="card-body">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+          <form onSubmit={handleAddProduct} className="card-body z-40">
             <h2 className="text-pink-600 text-2xl font-bold text-center -mt-5">
               Please add product info
             </h2>
-            <div className="form-control">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Product Name</span>
               </label>

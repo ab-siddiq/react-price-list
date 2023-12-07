@@ -36,7 +36,7 @@ const Products = () => {
           </Link>
         </div>
         <div className="overflow-x-auto">
-          <table className="table bg-pink-900 text-pink-100">
+          <table className="table bg-pink-900 text-pink-100 ">
             {/* head */}
             {products.length > 0 ? (
               <thead className="text-pink-100">
@@ -64,13 +64,13 @@ const Products = () => {
                   <td>{product.productDescription}</td>
                   <td>{product.productCategory}</td>
                   <td>{product.productPrice}</td>
-                  <td className="flex justify-start gap-2">
+                  <td className="flex justify-start  gap-2">
                     <Link to={`/update/${product._id}`}>
                       <button onClick={() => handleUpdate(product._id)}>
                         <PencilIcon className="h-5 w-5  text-green-600 " />
                       </button>
                     </Link>
-                    <div className="border-r-2 border-pink-100"></div>
+                    <div className="border-r-2  border-pink-100"></div>
                     <button onClick={() => handleDelete(product._id)}>
                       <TrashIcon className="h-5 w-5 text-red-600" />
                     </button>
