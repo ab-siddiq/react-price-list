@@ -18,16 +18,19 @@ const Update = () => {
       productCategory,
       productPrice,
     };
-    fetch(`http://localhost:5000/products/${loadedProducts._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedProductInfo),
-    })
+    fetch(
+      `https://react-price-list-server.vercel.app/products/${loadedProducts._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedProductInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         data.modifiedCount > 0 && alert("Updated");
         navigate("/products");
       });

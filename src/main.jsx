@@ -14,10 +14,10 @@ import PriceList from "./components/PriceList/PriceList";
 import Products from "./components/Products/Products.jsx";
 import Register from "./components/Register/Register";
 import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
+import Update from "./components/Update/Update.jsx";
 import Users from "./components/Users/Users.jsx";
 import "./index.css";
 import AuthProviders from "./providers/AuthProviders";
-import Update from "./components/Update/Update.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +44,8 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () =>
+          fetch("https://react-price-list-server.vercel.app/products"),
       },
       {
         path: "/purchase/:productID",
@@ -100,7 +101,10 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://react-price-list-server.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/users",

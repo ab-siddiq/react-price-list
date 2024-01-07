@@ -1,13 +1,13 @@
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
 
 const Products = () => {
   const loadedProducts = useLoaderData();
   const [products, setProducts] = useState(loadedProducts);
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://react-price-list-server.vercel.app/products/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
